@@ -20,13 +20,12 @@ const MainNavigation = () => {
   return (
     <Fragment>
       {drawerIsOpen && <Backdrop closeDrawerHandler={closeDrawerHandler} />}
-      {drawerIsOpen && (
-        <SideDrawer>
-          <nav className="main-navigation__drawer-nav">
-            <NavLinks />
-          </nav>
-        </SideDrawer>
-      )}
+
+      <SideDrawer show={drawerIsOpen} closeDrawerHandler={closeDrawerHandler}>
+        <nav className="main-navigation__drawer-nav">
+          <NavLinks />
+        </nav>
+      </SideDrawer>
 
       <MainHeader>
         <button
